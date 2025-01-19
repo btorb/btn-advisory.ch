@@ -1,4 +1,3 @@
-#baseURL = 'http://localhost:1313/'
 baseURL = 'https://btorb.github.io/btn-advisory.ch/'
 languageCode = 'en-us'
 title = 'BTN Advisory'
@@ -19,6 +18,14 @@ title = 'BTN Advisory'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+# Add these new settings
+[params]
+  env = "production"
+
+[module]
+  [module.hugoVersion]
+    extended = true
 
 [menu]
   [[menu.main]]

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}BTN Advisory{{ else }}{{ .Title }} - BTN Advisory{{ end }}</title>
     {{ $css := resources.Get "main.css" }}
-    {{ $css = $css | css.PostCSS }}
-    {{ $css = $css | fingerprint }}
+    {{ $css = $css | resources.PostCSS }}
+    {{ if hugo.IsProduction }}
+        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
     <link rel="stylesheet" href="{{ $css.Permalink }}">
 </head>
 <body class="min-h-screen flex flex-col">
