@@ -1,0 +1,15 @@
+<header class="bg-white shadow-sm">
+    <nav class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
+            
+            <div class="hidden md:flex space-x-4">
+                <a href="/" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
+                <a href="/about/" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
+                <a href="/services/" class="nav-link {{ if eq .Section "services" }}text-primary-600{{ end }}">Services</a>
+                <a href="/cartoons/" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
+                <a href="/contact/" class="btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
