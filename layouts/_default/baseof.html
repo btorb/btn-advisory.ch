@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}BTN Advisory{{ else }}{{ .Title }} - BTN Advisory{{ end }}</title>
     {{ $css := resources.Get "main.css" }}
-    {{ $css = $css | resources.PostCSS }}
+    {{ $css = $css | css.PostCSS }}
     {{ if hugo.IsProduction }}
-        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+        {{ $css = $css | minify | fingerprint }}
     {{ end }}
     <link rel="stylesheet" href="{{ $css.Permalink }}">
 </head>
