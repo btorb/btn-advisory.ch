@@ -45,3 +45,7 @@ title = 'BTN Advisory'
     name = "Contact"
     url = "/contact/"
     weight = 5
+
+ignoreFiles = [
+  "themes/hugo-bearblog/layouts/_default/baseof.html"
+]
