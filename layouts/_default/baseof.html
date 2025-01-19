@@ -6,10 +6,8 @@
     <title>{{ if .IsHome }}BTN Advisory{{ else }}{{ .Title }} - BTN Advisory{{ end }}</title>
     {{ $css := resources.Get "main.css" }}
     {{ $css = $css | css.PostCSS }}
-    {{ if hugo.IsProduction }}
-        {{ $css = $css | minify | fingerprint }}
-    {{ end }}
-    <link rel="stylesheet" href="{{ $css.Permalink }}">
+    {{ $css = $css | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
 <body class="min-h-screen flex flex-col">
     {{ partial "header.html" . }}
