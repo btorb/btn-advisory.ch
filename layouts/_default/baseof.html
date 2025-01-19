@@ -7,7 +7,7 @@
     {{ $css := resources.Get "main.css" }}
     {{ $css = $css | css.PostCSS }}
     {{ $css = $css | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink | absURL }}">
+    <link rel="stylesheet" href="{{ absURL $css.RelPermalink }}">
 </head>
 <body class="min-h-screen flex flex-col">
     {{ partial "header.html" . }}
