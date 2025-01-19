@@ -9,21 +9,95 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm">
+    
+
+
+<header class="bg-white shadow-sm relative">
     <nav class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
             
+            
+            <button type="button" class="md:hidden" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            
             <div class="hidden md:flex space-x-4">
                 <a href="/" class="nav-link ">Home</a>
                 <a href="/about/" class="nav-link ">About</a>
-                <a href="/services/" class="nav-link text-primary-600">Services</a>
+                
+                
+                <div class="relative group">
+                    <a href="/services/" class="nav-link inline-flex items-center text-primary-600">
+                        Services
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute z-10 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2 mt-1">
+                        <a href="/services/#advisory" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
+                        <a href="/services/#ai-workflows" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
+                        <a href="/services/#training" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
+                    </div>
+                </div>
+                
                 <a href="/cartoons/" class="nav-link ">Cartoons</a>
                 <a href="/contact/" class="btn-primary">Contact</a>
             </div>
         </div>
+
+        
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Home</a>
+                <a href="/about/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">About</a>
+                
+                
+                <div class="relative">
+                    <button onclick="toggleServicesMenu()" class="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 flex justify-between items-center">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="mobile-services-menu" class="hidden pl-4">
+                        <a href="/services/#advisory" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Advisory</a>
+                        <a href="/services/#ai-workflows" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">AI Workflows</a>
+                        <a href="/services/#training" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Training</a>
+                    </div>
+                </div>
+                
+                <a href="/cartoons/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Cartoons</a>
+                <a href="/contact/" class="block px-3 py-2 text-base font-medium bg-primary-600 text-white rounded-md">Contact</a>
+            </div>
+        </div>
     </nav>
 </header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+
+function toggleServicesMenu() {
+    const menu = document.getElementById('mobile-services-menu');
+    menu.classList.toggle('hidden');
+}
+
+
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileButton = event.target.closest('button');
+    
+    if (!mobileButton && !event.target.closest('#mobile-menu') && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+</script>
     <main class="flex-grow">
         
 <div class="container mx-auto px-4 py-8">

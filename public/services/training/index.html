@@ -9,28 +9,168 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm">
+    
+
+
+<header class="bg-white shadow-sm relative">
     <nav class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
             
+            
+            <button type="button" class="md:hidden" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            
             <div class="hidden md:flex space-x-4">
                 <a href="/" class="nav-link ">Home</a>
                 <a href="/about/" class="nav-link ">About</a>
-                <a href="/services/" class="nav-link text-primary-600">Services</a>
+                
+                
+                <div class="relative group">
+                    <a href="/services/" class="nav-link inline-flex items-center text-primary-600">
+                        Services
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute z-10 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2 mt-1">
+                        <a href="/services/#advisory" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
+                        <a href="/services/#training" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
+                        <a href="/services/#ai-workflows" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
+                    </div>
+                </div>
+                
                 <a href="/cartoons/" class="nav-link ">Cartoons</a>
                 <a href="/contact/" class="btn-primary">Contact</a>
             </div>
         </div>
+
+        
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Home</a>
+                <a href="/about/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">About</a>
+                
+                
+                <div class="relative">
+                    <button onclick="toggleServicesMenu()" class="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 flex justify-between items-center">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="mobile-services-menu" class="hidden pl-4">
+                        <a href="/services/#advisory" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Advisory</a>
+                        <a href="/services/#training" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Training</a>
+                        <a href="/services/#ai-workflows" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">AI Workflows</a>
+                    </div>
+                </div>
+                
+                <a href="/cartoons/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Cartoons</a>
+                <a href="/contact/" class="block px-3 py-2 text-base font-medium bg-primary-600 text-white rounded-md">Contact</a>
+            </div>
+        </div>
     </nav>
 </header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+
+function toggleServicesMenu() {
+    const menu = document.getElementById('mobile-services-menu');
+    menu.classList.toggle('hidden');
+}
+
+
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileButton = event.target.closest('button');
+    
+    if (!mobileButton && !event.target.closest('#mobile-menu') && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+</script>
     <main class="flex-grow">
         
-<div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">Training</h1>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Training</h1>
+    <p class="text-xl text-gray-600 text-center mb-16"></p>
+
     
-    <div class="grid gap-8 mt-8">
+    <div class="max-w-4xl mx-auto space-y-16">
         
+        <section id="advisory" class="scroll-mt-20">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="flex-shrink-0">
+                    <svg class="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Advisory Services</h2>
+                    <div class="prose max-w-none">
+                        <p>Strategic guidance and expert consultation for your business needs. We help organizations navigate complex challenges and achieve their goals.</p>
+                        <ul>
+                            <li>Strategic Planning</li>
+                            <li>Business Process Optimization</li>
+                            <li>Digital Transformation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="training" class="scroll-mt-20">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="flex-shrink-0">
+                    <svg class="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Training Services</h2>
+                    <div class="prose max-w-none">
+                        <p>Comprehensive training programs to enhance your team's capabilities. Practical, hands-on learning experiences.</p>
+                        <ul>
+                            <li>Custom Workshops</li>
+                            <li>Skills Development</li>
+                            <li>Technology Training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ai-workflows" class="scroll-mt-20">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="flex-shrink-0">
+                    <svg class="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">AI Workflows</h2>
+                    <div class="prose max-w-none">
+                        <p>Custom AI solutions to automate and optimize your business processes. Transform your operations with cutting-edge technology.</p>
+                        <ul>
+                            <li>Process Automation</li>
+                            <li>AI Integration</li>
+                            <li>Custom Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
