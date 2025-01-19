@@ -1,28 +1,9 @@
-<!--
-<header class="bg-white shadow-sm">
-    <nav class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
-            
-            <div class="hidden md:flex space-x-4">
-                <a href="/" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
-                <a href="/about/" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
-                <a href="/services/" class="nav-link {{ if eq .Section "services" }}text-primary-600{{ end }}">Services</a>
-                <a href="/cartoons/" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
-                <a href="/contact/" class="btn-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
-</header>
--->
-
-
 <header class="bg-white shadow-sm relative">
     <nav class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-            <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
+            <a href="{{ "/" | relURL }}" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
             
-            <!-- Mobile menu button -->
+            <!-- Mobile menu button - this is fine -->
             <button type="button" class="md:hidden" onclick="toggleMobileMenu()">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -31,34 +12,37 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
-                <a href="/" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
-                <a href="/about/" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
+                <!-- Change this link -->
+                <a href="{{ "/" | relURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
+                <a href="{{ "about" | relURL }}" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
                 
                 <!-- Services Dropdown -->
                 <div class="relative group">
-                    <a href="/services/" class="nav-link inline-flex items-center {{ if eq .Section "services" }}text-primary-600{{ end }}">
+                    <a href="{{ "services" | relURL }}" class="nav-link inline-flex items-center {{ if eq .Section "services" }}text-primary-600{{ end }}">
                         Services
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
+                    <!-- Update these service links -->
                     <div class="absolute z-10 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2 mt-1">
-                        <a href="/services/#advisory" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
-                        <a href="/services/#training" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
-                        <a href="/services/#ai-workflows" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
+                        <a href="{{ "services#advisory" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
+                        <a href="{{ "services#training" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
+                        <a href="{{ "services#ai-workflows" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
                     </div>
                 </div>
                 
-                <a href="/cartoons/" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
-                <a href="/contact/" class="btn-primary">Contact</a>
+                <a href="{{ "cartoons" | relURL }}" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
+                <!-- Update contact link -->
+                <a href="{{ "contact" | relURL }}" class="btn-primary">Contact</a>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu - Update all these links -->
         <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Home</a>
-                <a href="/about/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">About</a>
+                <a href="{{ "/" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Home</a>
+                <a href="{{ "about" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">About</a>
                 
                 <!-- Mobile Services Menu -->
                 <div class="relative">
@@ -69,37 +53,33 @@
                         </svg>
                     </button>
                     <div id="mobile-services-menu" class="hidden pl-4">
-                        <a href="/services/#advisory" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Advisory</a>
-                        <a href="/services/#training" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Training</a>
-                        <a href="/services/#ai-workflows" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">AI Workflows</a>
+                        <a href="{{ "services/#advisory" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Advisory</a>
+                        <a href="{{ "services/#training" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Training</a>
+                        <a href="{{ "services/#ai-workflows" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">AI Workflows</a>
                     </div>
                 </div>
                 
-                <a href="/cartoons/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Cartoons</a>
-                <a href="/contact/" class="block px-3 py-2 text-base font-medium bg-primary-600 text-white rounded-md">Contact</a>
+                <a href="{{ "cartoons" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Cartoons</a>
+                <a href="{{ "contact" | relURL }}" class="block px-3 py-2 text-base font-medium bg-primary-600 text-white rounded-md">Contact</a>
             </div>
         </div>
     </nav>
 </header>
 
-<script>
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-}
-
-function toggleServicesMenu() {
-    const menu = document.getElementById('mobile-services-menu');
-    menu.classList.toggle('hidden');
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileButton = event.target.closest('button');
-    
-    if (!mobileButton && !event.target.closest('#mobile-menu') && !mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-    }
-});
-</script>
+<!--
+<header class="bg-white shadow-sm">
+    <nav class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
+            
+            <div class="hidden md:flex space-x-4">
+                <a href="{{ "/" | relURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
+                <a href="/about/" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
+                <a href="/services/" class="nav-link {{ if eq .Section "services" }}text-primary-600{{ end }}">Services</a>
+                <a href="/cartoons/" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
+                <a href="/contact/" class="btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
+-->
