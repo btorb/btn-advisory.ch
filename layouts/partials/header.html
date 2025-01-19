@@ -3,16 +3,8 @@
         <div class="flex justify-between items-center h-16">
             <a href="{{ "/" | relURL }}" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
             
-            <!-- Mobile menu button - this is fine -->
-            <button type="button" class="md:hidden" onclick="toggleMobileMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
-                <!-- Change this link -->
                 <a href="{{ "/" | relURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
                 <a href="{{ "about" | relURL }}" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
                 
@@ -24,7 +16,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
-                    <!-- Update these service links -->
                     <div class="absolute z-10 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2 mt-1">
                         <a href="{{ "services#advisory" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
                         <a href="{{ "services#training" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
@@ -33,18 +24,16 @@
                 </div>
                 
                 <a href="{{ "cartoons" | relURL }}" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
-                <!-- Update contact link -->
                 <a href="{{ "contact" | relURL }}" class="btn-primary">Contact</a>
             </div>
         </div>
 
-        <!-- Mobile Menu - Update all these links -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="{{ "/" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">Home</a>
                 <a href="{{ "about" | relURL }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600">About</a>
                 
-                <!-- Mobile Services Menu -->
                 <div class="relative">
                     <button onclick="toggleServicesMenu()" class="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 flex justify-between items-center">
                         Services
@@ -65,21 +54,3 @@
         </div>
     </nav>
 </header>
-
-<!--
-<header class="bg-white shadow-sm">
-    <nav class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <a href="/" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
-            
-            <div class="hidden md:flex space-x-4">
-                <a href="{{ "/" | relURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
-                <a href="/about/" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
-                <a href="/services/" class="nav-link {{ if eq .Section "services" }}text-primary-600{{ end }}">Services</a>
-                <a href="/cartoons/" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
-                <a href="/contact/" class="btn-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
-</header>
--->
