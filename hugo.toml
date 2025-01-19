@@ -9,6 +9,8 @@ title = 'BTN Advisory'
   [[module.mounts]]
     source = "assets"
     target = "assets"
+  [module.hugoVersion]
+    extended = true
 
 [css]
   [css.postcss]
@@ -19,13 +21,8 @@ title = 'BTN Advisory'
     [markup.goldmark.renderer]
       unsafe = true
 
-# Add these new settings
 [params]
   env = "production"
-
-[module]
-  [module.hugoVersion]
-    extended = true
 
 [menu]
   [[menu.main]]
