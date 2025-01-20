@@ -1,4 +1,4 @@
-baseURL = '/' # 'http://localhost:1313/btn-advisory.ch/'
+baseURL = 'https://btorb.github.io/btn-advisory.ch'  # no trailing slash, local: '/'
 languageCode = 'en-us'
 title = 'BTN Advisory'
 
