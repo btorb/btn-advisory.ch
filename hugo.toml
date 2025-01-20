@@ -46,8 +46,5 @@ title = 'BTN Advisory'
     url = "/contact/"
     weight = 5
 
-ignoreFiles = [
-  "themes/hugo-bearblog/layouts/_default/baseof.html",
-  "themes/hugo-bearblog/layouts/partials/header.html",
-  "themes/hugo-bearblog/layouts/partials/footer.html"
-]
+verbose = true
+verboseLog = true
