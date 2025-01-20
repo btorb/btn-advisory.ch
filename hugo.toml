@@ -1,4 +1,4 @@
-baseURL = "https://btorb.github.io/btn-advisory.ch/"  # notice the double quotes and trailing slash
+baseURL = 'http://localhost:1313/btn-advisory.ch/'
 languageCode = 'en-us'
 title = 'BTN Advisory'
 

@@ -1,33 +1,32 @@
 <header class="bg-white shadow-sm relative">
     <nav class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-            <a href="{{ absURL "" }}" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
+            <a href="{{ .Site.BaseURL }}" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
             
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
-                <a href="{{ absURL "" }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
-                <a href="{{ absURL "about" }}" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
+                <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
+                <a href="{{ "about" | relURL }}" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
                 
                 <!-- Services Dropdown -->
                 <div class="relative group">
-                    <a href="{{ absURL "services" }}"" class="nav-link inline-flex items-center {{ if eq .Section "services" }}text-primary-600{{ end }}">
+                    <a href="{{ "services" | relURL }}" class="nav-link inline-flex items-center {{ if eq .Section "services" }}text-primary-600{{ end }}">
                         Services
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
                     <div class="absolute z-10 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2 mt-1">
-                        <a href="{{ absURL "services#advisory" }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
-                        <a href="{{ absURL "services#training" }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
-                        <a href="{{ absURL "services#ai-workflows" }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
+                        <a href="{{ "services#advisory" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Advisory</a>
+                        <a href="{{ "services#training" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Training</a>
+                        <a href="{{ "services#ai-workflows" | relURL }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">AI Workflows</a>
                     </div>
                 </div>
                 
-                <a href="{{ absURL "cartoons" }}" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
-                <a href="{{ absURL "contact" }}" class="btn-primary">Contact</a>
+                <a href="{{ "cartoons" | relURL }}" class="nav-link {{ if eq .Section "cartoons" }}text-primary-600{{ end }}">Cartoons</a>
+                <a href="{{ "contact" | relURL }}" class="btn-primary">Contact</a>
             </div>
         </div>
-
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1">
