@@ -1,11 +1,26 @@
-<div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-    <div class="container mx-auto px-4 py-16">
+<div class="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white min-h-[600px] overflow-hidden">
+    <!-- Background layers -->
+    <div class="absolute inset-0 z-0">
+        <!-- Solid color fallback first -->
+        <div class="absolute inset-0 bg-primary-600"></div>
+        <!-- Image positioned on the right side -->
+        <div class="absolute top-0 right-0 bottom-0 w-1/2 hidden md:block">
+            <img src="/images/BTN_picture.jpg" alt="Background" 
+                class="w-full h-full object-cover object-center"
+                style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);">
+        </div>
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-600/80"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 py-16">
         <div class="max-w-3xl">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                Professional Advisory Services for Your Business
+                AI Expertise That Drives Results for Your Business
             </h1>
             <p class="text-xl text-primary-50 mb-8">
-                Expert guidance, training, and AI solutions to drive your business forward
+                Leadership advisory, tailored training, and end-to-end AI solutions to create sustainable value and achieve your business goals
             </p>
             <div class="flex flex-wrap gap-4">
                 <a href="{{ "contact" | relURL }}"  class="btn-primary bg-white text-primary-600 hover:bg-gray-100">
