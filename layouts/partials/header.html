@@ -2,6 +2,13 @@
     <nav class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <a href="{{ .Site.BaseURL }}" class="text-xl font-semibold text-primary-600">BTN Advisory</a>
+
+            <!-- Mobile Menu Button (added this) -->
+            <button type="button" onclick="toggleMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
             
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
@@ -53,3 +60,16 @@
         </div>
     </nav>
 </header>
+
+<!-- Add this script at the end of your header.html -->
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    function toggleServicesMenu() {
+        const servicesMenu = document.getElementById('mobile-services-menu');
+        servicesMenu.classList.toggle('hidden');
+    }
+</script>
