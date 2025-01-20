@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/btn-advisory.ch/'
+baseURL = '/' # 'http://localhost:1313/btn-advisory.ch/'
 languageCode = 'en-us'
 title = 'BTN Advisory'
 
