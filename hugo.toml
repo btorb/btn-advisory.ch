@@ -1,5 +1,5 @@
 #baseURL = 'https://btorb.github.io/btn-advisory.ch'  # no trailing slash, local: '/'
-baseURL = 'https://btn-advisory.ch'
+baseURL = 'https://btn-advisory.ch/'
 
 languageCode = 'en-us'
 title = 'BTN Advisory'
