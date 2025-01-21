@@ -3,21 +3,28 @@
 {{ $contentAlign := .contentAlign | default "left" }}
 {{ $width := .width | default "full" }}
 
+{{ $background := .background | default "white" }}
+{{ $titleAlign := .titleAlign | default "left" }}
+{{ $contentAlign := .contentAlign | default "left" }}
+{{ $width := .width | default "full" }}
 <section class="relative w-screen -ml-[50vw] left-1/2 right-1/2 {{ if eq $background "blue" }}bg-blue-50{{ else }}bg-white{{ end }} py-16 md:py-24">
     <!-- Content container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header Section -->
+        {{ if or .title .subtitle }}
         <div class="{{ if eq $width "half" }}md:w-1/2{{ else }}w-full{{ end }} 
                     {{ if eq $titleAlign "center" }}mx-auto text-center{{ end }}
                     {{ if eq $titleAlign "right" }}ml-auto text-right{{ end }}">
             {{ with .subtitle }}
                 <div class="text-primary-600 font-semibold mb-4">{{ . }}</div>
             {{ end }}
-            <h2 class="heading-xl mb-6">{{ .title }}</h2>
+            {{ with .title }}
+                <h2 class="heading-xl mb-6">{{ . }}</h2>
+            {{ end }}
         </div>
-
+        {{ end }}
         <!-- Content Section -->
-        <div class="mt-8 w-full 
+        <div class="{{ if or .title .subtitle }}mt-8{{ end }} w-full 
                     {{ if eq $contentAlign "center" }}text-center{{ end }}
                     {{ if eq $contentAlign "right" }}text-right{{ end }}">
             <div class="text-feature">

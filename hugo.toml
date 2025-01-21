@@ -40,10 +40,6 @@ title = 'BTN Advisory'
     url = "/services/"
     weight = 3
   [[menu.main]]
-    name = "Cartoons"
-    url = "/cartoons/"
-    weight = 4
-  [[menu.main]]
     name = "Contact"
     url = "/contact/"
     weight = 5
