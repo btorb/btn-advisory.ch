@@ -1,0 +1,11 @@
+{{ $context := dict 
+    "background" (.Get "background")
+    "title" (.Get "title")
+    "subtitle" (.Get "subtitle")
+    "titleAlign" (.Get "titleAlign" | default "left")
+    "contentAlign" (.Get "contentAlign" | default "left")
+    "width" (.Get "width" | default "full")
+    "content" (.Inner | markdownify)
+}}
+
+{{ partial "text-section.html" $context }}

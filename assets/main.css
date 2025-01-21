@@ -25,6 +25,30 @@
       @apply h-6 w-6 text-gray-600 hover:text-primary-600 transition-colors;
   }
 
+  .heading-xl {
+    @apply text-4xl md:text-5xl font-bold text-gray-900 leading-tight;
+    }
+
+    .heading-lg {
+        @apply text-3xl md:text-4xl font-bold text-gray-900 leading-tight;
+    }
+
+    .text-feature {
+        @apply text-lg text-gray-600 leading-relaxed;
+    }
+
+    .checklist {
+        @apply space-y-3;
+    }
+
+    .checklist-item {
+        @apply flex items-start space-x-3 text-gray-700;
+    }
+
+    .checklist-icon {
+        @apply flex-shrink-0 h-6 w-6 text-primary-600 mt-1;
+    }
+
 }
 
 /* Ensure proper styling for markdown content */

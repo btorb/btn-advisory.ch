@@ -1,0 +1,10 @@
+{{ $context := dict 
+    "imagePosition" (.Get "imagePosition")
+    "background" (.Get "background")
+    "imageSrc" (.Get "imageSrc")
+    "title" (.Get "title")
+    "subtitle" (.Get "subtitle")
+    "content" (.Inner | markdownify)
+}}
+
+{{ partial "content-section.html" $context }}
