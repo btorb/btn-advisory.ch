@@ -61,5 +61,7 @@ An AI and innovation leader passionate about making AI work in companies and dri
 
 My background includes over twenty years of international experience in innovation, including experience as a professor teaching AI. This academic foundation, combined with subsequent corporate roles, has provided a broad perspective on the challenges and opportunities of applying AI in real-world settings. I hold a PhD awarded in Artificial Intelligence and Neuroscience, as well as an Executive MBA. This unique background brings together strong technical knowledge, business acumen, and strategic vision.
 
+I frequently partner with other agencies to deliver bespoke results.
+
 {{< /text-section >}}
 

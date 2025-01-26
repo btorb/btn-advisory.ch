@@ -48,10 +48,22 @@
     .checklist-icon {
         @apply flex-shrink-0 h-6 w-6 text-primary-600 mt-1;
     }
+    p {
+        margin-bottom: 1rem; /* Adjust spacing as needed */
+      }
+}
 
+p {
+    margin-bottom: 1rem; /* Add spacing between paragraphs */
 }
 
 /* Ensure proper styling for markdown content */
 .prose {
     @apply max-w-none;
 }
+
+.prose p {
+    margin-bottom: 1rem; /* Ensure spacing in prose blocks */
+}
+
+
