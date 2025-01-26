@@ -8,12 +8,12 @@ hideTitle = true
 {{< text-section 
     background="blue" 
     title="Contact" 
-    subtitle="" 
+    subtitle=""
     titleAlign="center"
     contentAlign="center"
     width="half" >}}
 
-ben@claritys.ai
+btorbennielsen@gmail.com
 
 {{< /text-section >}}
 
