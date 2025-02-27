@@ -6,18 +6,6 @@ hideTitle = true
 +++
 
 {{< text-section 
-    background="blue" 
-    title="Contact" 
-    subtitle=""
-    titleAlign="center"
-    contentAlign="center"
-    width="half" >}}
-
-btorbennielsen@gmail.com
-
-{{< /text-section >}}
-
-{{< text-section 
     background="white" 
     title="Schedule free consultation" 
     subtitle="" 
