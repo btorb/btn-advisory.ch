@@ -11,7 +11,7 @@
             </button>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex items-center space-x-4">
                 <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}text-primary-600{{ end }}">Home</a>
                 <a href="{{ "about" | relURL }}" class="nav-link {{ if eq .Section "about" }}text-primary-600{{ end }}">About</a>
                 
