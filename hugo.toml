@@ -28,21 +28,21 @@ title = 'BTN Advisory'
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
+    name = "About"
+    url = "/#about"
     weight = 1
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Advisory"
+    url = "/#advisory"
     weight = 2
   [[menu.main]]
-    name = "Services"
-    url = "/services/"
+    name = "Enlighten Session"
+    url = "/enlighten-session/"
     weight = 3
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 5
+    weight = 4
 
 verbose = true
 verboseLog = true

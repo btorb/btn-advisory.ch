@@ -37,6 +37,14 @@
         @apply text-lg text-gray-600 leading-relaxed;
     }
 
+    .nav-link {
+        @apply text-white hover:text-primary-100 transition-colors font-medium;
+    }
+
+    .btn-contact {
+        @apply inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded hover:bg-primary-50 transition duration-150 font-medium;
+    }
+
     .checklist {
         @apply space-y-3;
     }

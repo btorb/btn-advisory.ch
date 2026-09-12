@@ -1,11 +1,105 @@
 {{ define "main" }}
     {{ partial "hero.html" . }}
-    
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <!-- <h2 class="section-title text-center">Our Services</h2>
-            <p class="section-subtitle text-center">Comprehensive solutions for your business needs</p> -->
-            {{ partial "services-grid.html" . }}
+
+    <!-- About Section -->
+    <section id="about" class="bg-blue-50 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text + Checklist -->
+                <div class="w-full md:w-1/2">
+                    <div class="text-primary-600 font-semibold mb-4">Dr. Ben Torben-Nielsen</div>
+                    <h2 class="heading-xl mb-6">Human-centric AI leader creating lasting value.</h2>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>PhD in AI and Neuroscience</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Trusted AI Advisor to Senior Leadership</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>20+ Years of Experience in Applied AI</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advised organisations from 3 people to $30B in revenue</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Frequent Guest Lecturer at Universities and Business Schools</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Inventor with Two Patents and Author of 40+ Peer-Reviewed Publications</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="checklist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Recognized AI Expert Cited in Forbes</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Photo -->
+                <div class="w-full md:w-1/2">
+                    <img src="{{ "images/BTN_picture.jpg" | absURL }}" alt="Dr. Ben Torben-Nielsen"
+                        class="rounded-lg shadow-lg w-full h-auto object-cover">
+                </div>
+            </div>
+            <!-- Bio -->
+            <div class="mt-16 max-w-3xl mx-auto text-center">
+                <p class="text-feature">An AI and innovation leader passionate about making AI work in companies and driving real-world impact, with a mission to use AI and data ethically to foster both business results and human-centric outcomes. My background spans over twenty years of international experience in applied AI, corporate roles, and academia — including a PhD in Artificial Intelligence and Neuroscience and an Executive MBA. I frequently partner with other leading experts to deliver bespoke results for clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Section -->
+    <section id="advisory" class="bg-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="heading-xl mb-6">Strategic AI Advisory</h2>
+                <p class="text-feature mb-8">I work directly with senior leadership to cut through the noise and build a grounded AI strategy your organisation can actually execute. Engagements are tailored — no generic playbooks.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-12">
+                    <div class="card">
+                        <h3 class="text-lg font-bold text-primary-600 mb-2">AI Strategy & Roadmap</h3>
+                        <p class="text-gray-600">Develop a clear, prioritised AI agenda aligned with your business strategy, competitive context, and operating model.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-lg font-bold text-primary-600 mb-2">Executive Guidance</h3>
+                        <p class="text-gray-600">Trusted counsel to board members and C-suite on AI investment decisions, vendor selection, governance, and risk.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-lg font-bold text-primary-600 mb-2">Transformation Support</h3>
+                        <p class="text-gray-600">Hands-on support for AI-driven transformation — from operating model design to value realisation and stakeholder alignment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="bg-blue-50 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="heading-xl mb-4">Let's talk</h2>
+            <p class="text-feature mb-8">Whether you're exploring AI strategy, need a trusted advisor, or want to understand what's possible — I'm happy to have an initial conversation.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/contact/" class="btn-primary">Book a free consultation</a>
+                <a href="mailto:ben@btn-advisory.ch" class="btn-secondary">ben@btn-advisory.ch</a>
+            </div>
         </div>
     </section>
 {{ end }}

@@ -1,15 +1,12 @@
 <div class="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white min-h-[600px] overflow-hidden">
     <!-- Background layers -->
     <div class="absolute inset-0 z-0">
-        <!-- Solid color fallback first -->
         <div class="absolute inset-0 bg-primary-600"></div>
-        <!-- Image positioned on the right side -->
         <div class="absolute top-0 right-0 bottom-0 w-1/2 hidden md:block">
-            <img src={{ "images/BTN_picture.jpg" | absURL }} alt="Background" 
+            <img src={{ "images/BTN_picture.jpg" | absURL }} alt="Dr. Ben Torben-Nielsen"
                 class="w-full h-full object-cover object-center"
                 style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);">
         </div>
-        <!-- Gradient overlay -->
         <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-600/40"></div>
     </div>
 
@@ -17,17 +14,17 @@
     <div class="relative z-10 container mx-auto px-4 py-16">
         <div class="max-w-3xl">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                AI Expertise That Drives Results for Your Business
+                AI Advisory That Drives Real Results
             </h1>
             <p class="text-xl text-primary-50 mb-8">
-                Leadership advisory, tailored training, and end-to-end AI solutions to create sustainable value and achieve your business goals
+                Strategic counsel for senior leadership on AI adoption, value creation, and enterprise transformation.
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="{{ "contact" | relURL }}"  class="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-                    Get Started
+                <a href="/#contact" class="btn-primary bg-white text-primary-600 hover:bg-gray-100">
+                    Book a Consultation
                 </a>
-                <a href="{{ "services" | relURL }}"  class="btn-secondary text-white border-white hover:bg-primary-600">
-                    Our Services
+                <a href="/enlighten-session/" class="btn-secondary text-white border-white hover:bg-primary-700">
+                    Enlighten Session
                 </a>
             </div>
         </div>
